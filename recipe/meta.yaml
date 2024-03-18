@@ -1,5 +1,5 @@
 {% set name = "justpath" %}
-{% set version = "0.0.16" %}
+{% set version = "0.0.17" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/justpath-{{ version }}.tar.gz
-  sha256: 712565556aebec5bf9932a26cffd83e504d1d283f5619be9a0d69b5fd8c92274
+  sha256: 0cbb7ae670733b7457f82b6fd91c2e40437186d904e6fbb825dfbc96afedb7a8
 
 build:
   entry_points:
