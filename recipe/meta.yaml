@@ -1,3 +1,4 @@
+{% set python_min = '3.10.0' %}
 {% set name = "justpath" %}
 {% set version = "0.0.17" %}
 
@@ -6,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/justpath-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/justpath-{{ version }}.tar.gz
   sha256: 0cbb7ae670733b7457f82b6fd91c2e40437186d904e6fbb825dfbc96afedb7a8
 
 build:
@@ -15,15 +16,15 @@ build:
     - justpath = justpath.show:typer_app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.10,<4.0
+    - python {{ python_min }}
     - poetry-core
     - pip
   run:
-    - python >=3.10.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - typer >=0.9.0,<0.10.0
     - colorama >=0.4.6,<0.5.0
     - types-colorama >=0.4.15,<0.4.16
@@ -37,6 +38,7 @@ test:
     - justpath --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/epogrebnyak/justpath
