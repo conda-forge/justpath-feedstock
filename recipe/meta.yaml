@@ -1,6 +1,6 @@
-{% set python_min = '3.10.0' %}
+{% set python_min = "3.10.0" %}
 {% set name = "justpath" %}
-{% set version = "0.0.17" %}
+{% set version = "0.0.18" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/justpath-{{ version }}.tar.gz
-  sha256: 0cbb7ae670733b7457f82b6fd91c2e40437186d904e6fbb825dfbc96afedb7a8
+  sha256: ce506820d2eb1929c74d067f81fe501011d0a317a5a15283a13d8d7f9cf9bc08
 
 build:
   entry_points:
@@ -16,7 +16,7 @@ build:
     - justpath = justpath.show:typer_app
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
