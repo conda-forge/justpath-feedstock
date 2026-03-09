@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: justpath
-  version: 0.0.18
+  version: "0.1.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/justpath-${{ version }}.tar.gz
-  sha256: ce506820d2eb1929c74d067f81fe501011d0a317a5a15283a13d8d7f9cf9bc08
+  sha256: 525263b675332e36af4dca51deb473433953800e289099750dae31280a5fa5e9
 
 build:
   number: 0
