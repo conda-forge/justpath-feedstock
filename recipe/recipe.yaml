@@ -2,7 +2,8 @@ schema_version: 1
 
 context:
   name: justpath
-  version: 0.0.18
+  version: "0.1.0"
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/justpath-${{ version }}.tar.gz
-  sha256: ce506820d2eb1929c74d067f81fe501011d0a317a5a15283a13d8d7f9cf9bc08
+  sha256: d890d60558f2321e844a6aa162bc2c19c277f999d5dafef587215e0d4e955efa
 
 build:
   number: 0
@@ -24,13 +25,13 @@ build:
 requirements:
   host:
     - python ${{ python_min }}.*
-    - poetry-core
+    - setuptools >=69
+    - wheel
     - pip
   run:
     - python >=${{ python_min }}
-    - typer >=0.18.0,<0.19.0
-    - colorama >=0.4.6,<0.5.0
-    - types-colorama >=0.4.15,<0.5.0
+    - typer >=0.24.1
+    - rich >=14.3.3
 
 tests:
   - python:
