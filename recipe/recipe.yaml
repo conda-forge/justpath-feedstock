@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: justpath
   version: "0.1.4"
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
@@ -37,7 +38,9 @@ tests:
       imports:
         - justpath
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
