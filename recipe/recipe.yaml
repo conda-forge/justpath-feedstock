@@ -19,8 +19,7 @@ build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
-      - pathit = justpath.show:typer_app
-      - justpath = justpath.show:typer_app
+      - justpath = justpath.cli:typer_app
 
 requirements:
   host:
@@ -45,7 +44,6 @@ tests:
       run:
         - python ${{ python_min }}.*
     script:
-      - pathit --help
       - justpath --help
 
 about:
